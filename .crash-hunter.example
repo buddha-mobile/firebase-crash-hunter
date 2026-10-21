@@ -1,0 +1,34 @@
+# Firebase Crash Hunter — Configuration
+# Copy this file to .crash-hunter in your repo root (it's gitignored)
+# All values can also be set as environment variables instead.
+
+# ── Required ───────────────────────────────────────────────────────────────
+
+# Your Google Cloud / Firebase project ID
+# Find it: cat android/google-services.json | grep project_id
+FIREBASE_PROJECT_ID=my-firebase-project
+
+# Your Android app's package name (from build.gradle / app.id)
+ANDROID_PACKAGE_NAME=com.example.myapp
+
+# ── Optional ───────────────────────────────────────────────────────────────
+
+# BigQuery dataset name (default: firebase_crashlytics)
+# BQ_DATASET=firebase_crashlytics
+
+# Override the table name if yours differs from the default
+# Default is derived as: ${ANDROID_PACKAGE_NAME//./_}_ANDROID
+# BQ_TABLE=com_example_myapp_ANDROID
+
+# Path to your repo root (default: current working directory)
+# REPO_ROOT=/path/to/your/repo
+
+# Path to your CLAUDE.md rules file (default: $REPO_ROOT/CLAUDE.md)
+# If not found, universal Kotlin/Android rules are used automatically.
+# CLAUDE_MD_PATH=/path/to/CLAUDE.md
+
+# Override the claude binary path (default: auto-detected from PATH)
+# CLAUDE_BIN=/home/user/.nvm/versions/node/v20/bin/claude
+
+# Log file location (default: same directory as crash_hunter.sh)
+# LOG_FILE=/tmp/crash_hunter.log
